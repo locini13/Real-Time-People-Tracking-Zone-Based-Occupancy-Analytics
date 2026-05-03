@@ -17,6 +17,8 @@ A full-stack computer vision system that detects and tracks people in video foot
 - **PDF Export** — Download the entire dashboard as a PDF report
 
 ---
+#### VIDEO
+https://drive.google.com/file/d/1Z9M3tKravqIeqGc57xcDhaaqBT5b8Wy5/view?usp=sharing
 
 ## Project Structure
 
