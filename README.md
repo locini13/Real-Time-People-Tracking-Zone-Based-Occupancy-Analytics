@@ -1,6 +1,6 @@
 # Real-Time People Tracking & Zone-Based Occupancy Analytics
 
-A full-stack computer vision system that detects and tracks people in video footage using **YOLOv8** and **DeepSORT**, assigns them to custom spatial zones, and produces rich per-zone analytics including occupancy, dwell time, entry/exit counts, and zone transitions — all presented through a premium **Analytics Pro** web dashboard.
+A full-stack computer vision system that detects and tracks people in video footage using **YOLOv8** and **DeepSORT**, assigns them to custom spatial zones, and produces rich per-zone analytics including occupancy, dwell time, entry/exit counts, and zone transitions — all presented through  **Analytics** web dashboard.
 
 ---
 
