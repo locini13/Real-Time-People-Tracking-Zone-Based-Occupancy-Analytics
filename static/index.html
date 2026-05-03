@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone-Based Occupancy Analytics Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="app-container">
+        <header class="header glass-panel">
+            <h1>Analytics <span class="accent">Pro</span></h1>
+            <p>Upload a video, draw custom zones, and generate comprehensive insights.</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload & Setup Section -->
+            <section class="setup-section glass-panel" id="setup-section">
+                <div class="upload-box" id="upload-box">
+                    <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    <p>Drag & Drop your video here to begin</p>
+                    <span>or</span>
+                    <label for="video-upload" class="btn-primary">Browse File</label>
+                    <input type="file" id="video-upload" accept="video/*" hidden>
+                </div>
+
+                <!-- Zone Drawing Tool (Hidden until video selected) -->
+                <div class="zone-drawing-container hidden" id="zone-drawing-container">
+                    <h3>Draw Custom Zones</h3>
+                    <p class="subtitle">Click on the canvas to draw a polygon. Click "Complete Zone" to finish a shape.</p>
+                    <div class="canvas-wrapper">
+                        <video id="preview-video" style="display: none;"></video>
+                        <canvas id="drawing-canvas"></canvas>
+                    </div>
+                    <div class="drawing-controls">
+                        <input type="text" id="zone-name" placeholder="Zone Name (e.g., Entrance)" class="input-field">
+                        <label class="restricted-checkbox">
+                            <input type="checkbox" id="zone-restricted"> Restricted Area
+                        </label>
+                        <button id="btn-complete-zone" class="btn-secondary">Complete Zone</button>
+                        <button id="btn-clear-zones" class="btn-danger">Clear All</button>
+                    </div>
+                    <ul id="drawn-zones-list" class="zones-list"></ul>
+                    <button id="btn-start-processing" class="btn-primary pulse-btn">Start Processing</button>
+                </div>
+
+                <div class="loading-state hidden" id="loading-state">
+                    <div class="spinner"></div>
+                    <p class="processing-text">Running AI Models... This may take a moment.</p>
+                </div>
+            </section>
+
+            <!-- Results Dashboard -->
+            <section class="results-section hidden" id="results-section">
+                <div class="dashboard-header">
+                    <h2>Live Intelligence Dashboard</h2>
+                    <button id="btn-export-pdf" class="btn-secondary">Download PDF Report</button>
+                </div>
+
+                <div class="media-grid">
+                    <div class="media-card glass-panel">
+                        <h3>Real-Time Tracking & Trails</h3>
+                        <div class="video-container">
+                            <video id="result-video" controls autoplay muted loop></video>
+                        </div>
+                    </div>
+                    <div class="media-card glass-panel">
+                        <h3>Traffic Heatmap</h3>
+                        <img id="result-heatmap" src="" alt="Heatmap">
+                    </div>
+                </div>
+
+                <div class="dashboard" id="pdf-content">
+                    <div class="stats-grid" id="stats-grid">
+                        <!-- Stats injected here -->
+                    </div>
+                    
+                    <div class="charts-container">
+                        <div class="chart-card glass-panel">
+                            <h3>Occupancy Over Time</h3>
+                            <canvas id="occupancyChart"></canvas>
+                        </div>
+                        <div class="chart-card glass-panel">
+                            <h3>Zone Distribution</h3>
+                            <canvas id="distributionChart"></canvas>
+                        </div>
+                        <div class="chart-card glass-panel">
+                            <h3>Average Dwell Time (s)</h3>
+                            <canvas id="dwellTimeChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="transitions-card glass-panel">
+                        <h3>Zone Transitions</h3>
+                        <ul id="transitions-list" class="transitions-list">
+                            <!-- Transitions injected here -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

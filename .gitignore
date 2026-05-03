@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+env/
+__pycache__/
+*.pyc
+
+# IDEs
+.idea/
+.vscode/
+
+# Media and Output Files
+*.mp4
+*.avi
+*.jpg
+*.png
+analytics_summary.json
+occupancy_log.csv
+
+# AI Models
+*.pt
+yolov8n.pt
+yolov8m.pt
+
+# User Uploads and Output
+uploads/
+frames_analysis/
+output/
+static/output/
+
+# OS Files
+.DS_Store
+Thumbs.db
