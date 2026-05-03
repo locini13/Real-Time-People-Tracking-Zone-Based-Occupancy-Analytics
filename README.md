@@ -20,7 +20,7 @@ A full-stack computer vision system that detects and tracks people in video foot
 #### VIDEO
 https://drive.google.com/file/d/1Z9M3tKravqIeqGc57xcDhaaqBT5b8Wy5/view?usp=sharing
 
-<img width="1394" height="1063" alt="image" src="https://github.com/user-attachments/assets/bea7a7ee-b0b5-489f-97c9-7a483481774a" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/bea7a7ee-b0b5-489f-97c9-7a483481774a" />
 
 
 ## Project Structure
