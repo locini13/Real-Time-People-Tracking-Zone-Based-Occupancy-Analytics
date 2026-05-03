@@ -4,7 +4,7 @@ A full-stack computer vision system that detects and tracks people in video foot
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **YOLOv8n Person Detection** — Fast, real-time person detection
 - **DeepSORT Multi-Object Tracking** — Persistent IDs across frames, robust to occlusion
@@ -18,7 +18,7 @@ A full-stack computer vision system that detects and tracks people in video foot
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── app.py                  # Flask web server & API routes
@@ -36,7 +36,7 @@ A full-stack computer vision system that detects and tracks people in video foot
 
 ---
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
@@ -70,7 +70,7 @@ Open your browser at **http://localhost:5000**
 
 ---
 
-## 🗺️ Zone Layout
+## Zone Layout
 
 Zones are drawn interactively via the web UI canvas. The system supports any number of custom polygon zones. A typical 4-zone layout for an overhead concourse scene looks like this:
 
@@ -85,7 +85,7 @@ Zones are drawn interactively via the web UI canvas. The system supports any num
 
 ---
 
-## ⚙️ Parameter Choices & Rationale
+##  Parameter Choices & Rationale
 
 ### YOLOv8 Detection
 | Parameter | Value | Reason |
@@ -107,7 +107,7 @@ Zones are drawn interactively via the web UI canvas. The system supports any num
 
 ---
 
-## 🔍 Zone Boundary Logic
+##  Zone Boundary Logic
 
 **Rule:** A person is assigned to a zone based solely on the **centroid** (center point) of their bounding box.
 
@@ -115,7 +115,7 @@ Zones are drawn interactively via the web UI canvas. The system supports any num
 
 ---
 
-## 📊 Sample Output
+##  Sample Output
 
 ### Analytics Summary (`analytics_summary.json`)
 ```json
@@ -146,7 +146,7 @@ frame,timestamp_sec,zone_0_count,zone_1_count,zone_2_count,zone_3_count,total_co
 
 ---
 
-## 🧠 Challenges & Solutions
+## Challenges & Solutions
 
 ### 1. ID Switches During Occlusions
 **Challenge:** When two people crossed paths or walked close together, DeepSORT would lose track of one and assign a new ID — inflating unique visitor counts and breaking zone transition records.
@@ -170,7 +170,7 @@ frame,timestamp_sec,zone_0_count,zone_1_count,zone_2_count,zone_3_count,total_co
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ```
 ultralytics>=8.0.0       # YOLOv8
@@ -183,7 +183,7 @@ imageio[ffmpeg]          # Browser-compatible MP4 encoding
 
 ---
 
-## 📤 Output Deliverables
+## Output Deliverables
 
 | File | Description |
 |------|-------------|
